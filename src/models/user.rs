@@ -139,6 +139,17 @@ pub struct PreloginResponse {
     pub kdf_iterations: i32,
     pub kdf_memory: Option<i32>,
     pub kdf_parallelism: Option<i32>,
+    pub kdf_settings: PreloginKdfSettings,
+    pub salt: Option<String>,
+}
+
+#[derive(Debug, Serialize)]
+#[serde(rename_all = "camelCase")]
+pub struct PreloginKdfSettings {
+    pub iterations: i32,
+    pub kdf_type: i32,
+    pub memory: Option<i32>,
+    pub parallelism: Option<i32>,
 }
 
 // For /accounts/register request

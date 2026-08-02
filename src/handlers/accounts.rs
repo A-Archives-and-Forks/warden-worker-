@@ -26,8 +26,8 @@ use crate::{
         sync::Profile,
         user::{
             AvatarData, ChangeKdfRequest, ChangePasswordRequest, MasterPasswordUnlockData,
-            PasswordHintRequest, PasswordOrOtpData, PreloginResponse, ProfileData, RegisterRequest,
-            RotateKeyRequest, User,
+            PasswordHintRequest, PasswordOrOtpData, PreloginKdfSettings, PreloginResponse,
+            ProfileData, RegisterRequest, RotateKeyRequest, User,
         },
     },
     notifications::{self, UpdateType},
@@ -182,6 +182,13 @@ pub async fn prelogin(
         kdf_iterations: kdf_iterations.unwrap_or(DEFAULT_PBKDF2_ITERATIONS),
         kdf_memory,
         kdf_parallelism,
+        kdf_settings: PreloginKdfSettings {
+            iterations: kdf_iterations.unwrap_or(DEFAULT_PBKDF2_ITERATIONS),
+            kdf_type: kdf_type.unwrap_or(KDF_TYPE_PBKDF2),
+            memory: kdf_memory,
+            parallelism: kdf_parallelism,
+        },
+        salt: None,
     }))
 }
 
