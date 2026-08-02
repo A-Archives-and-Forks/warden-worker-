@@ -320,11 +320,7 @@ pub struct UnlockData {
 #[derive(Debug, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct ChangeKdfRequest {
-    #[allow(dead_code)]
-    pub key: String,
     pub master_password_hash: String,
-    #[allow(dead_code)]
-    pub new_master_password_hash: String,
     pub authentication_data: AuthenticationData,
     pub unlock_data: UnlockData,
 }
