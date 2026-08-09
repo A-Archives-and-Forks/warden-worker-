@@ -255,7 +255,7 @@ Because this is a Rust→WASM Worker (the Workers Builds image does not ship Rus
    | `D1_DATABASE_ID` | yes | Production D1 database id (substituted into `wrangler.toml`) |
    | `BW_WEB_VERSION` | no | `bw_web_builds` tag (default `v2026.6.4`); set `latest` to track upstream |
    | `WRANGLER_VERSION` | no | Pinned wrangler (default `4.82.1`) |
-   | `WORKER_BUILD_VERSION` | no | Pinned worker-build (default `0.8.3`; match the `worker` dep in `Cargo.toml`) |
+   | `WORKER_BUILD_VERSION` | no | Pinned worker-build (default `0.8.5`; match the `worker` dep in `Cargo.toml`) |
    | `R2_NAME` | no | R2 bucket name; enables the `ATTACHMENTS_BUCKET` binding |
    | `SEED_GLOBAL_DOMAINS` | no | `false` to skip seeding global equivalent domains |
    | `GLOBAL_DOMAINS_URL` | no | Pin a specific `global_domains.json` source |
